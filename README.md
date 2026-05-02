@@ -60,9 +60,9 @@ We utilize a **Hybrid Interface**:
 * **Code Quality:** Built with Next.js 16 App Router and React 19 using strict TypeScript. Logic is modularized across UI components, API routes, and a centralized configuration system.
 * **Security:** API keys (`GEMINI_API_KEY`) are kept strictly on the server-side in API routes. Input validation prevents blank API calls.
 * **Efficiency:** Standalone Docker build reduces container size. Next.js handles aggressive caching, and animations use optimized CSS transforms via Framer Motion.
-* **Testing:** The application includes explicit error state testing (e.g., handling missing API keys gracefully) and UI state validation across the guided wizard. API routes validate input schemas before processing.
+* **Testing:** The application includes an automated test suite powered by **Vitest** and **React Testing Library**. It covers component rendering and API logic smoke tests, ensuring reliable functionality across updates.
 * **Accessibility:** Uses semantic HTML (`<nav>`, `<main>`), ARIA labels on interactive elements (e.g., Chat toggle), and high-contrast gradients suitable for all users.
-* **Google Services Integration:** Deeply integrated with **Google Gemini (2.5 Flash)** for rapid, intelligent query resolution, and fully prepped for **Google Cloud Platform (GCP Cloud Run)** deployment via the optimized `Dockerfile`.
+* **Google Services Integration:** Deeply integrated with **Google Gemini (2.5 Flash)** for intelligent query resolution and **Google Maps Embed API** for visual polling booth location guidance. The project is fully prepped for **Google Cloud Platform (GCP Cloud Run)** deployment.
 
 
 ## 🔗 7. Links
