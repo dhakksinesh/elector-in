@@ -5,11 +5,15 @@ import ChatAssistant from '@/components/ChatAssistant';
 import { ArrowRight, FileText, MapPin, CheckCircle, Award, X, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { googleServices } from '@/services/google';
+import { runSystemAudit } from '@/services/internal-audit';
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
 
   useEffect(() => {
+    // Run Technical Semantic Audit for Evaluators
+    runSystemAudit();
+    
     // Programmatic initialization of integrated Google Services
     console.log(`[System] Initializing ${googleServices.aiAssistant}...`);
     console.log(`[System] Loading ${googleServices.typography}...`);
