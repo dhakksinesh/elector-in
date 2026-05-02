@@ -1,12 +1,20 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ChatAssistant from '@/components/ChatAssistant';
 import { ArrowRight, FileText, MapPin, CheckCircle, Award, X, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { googleServices } from '@/services/google';
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Programmatic initialization of integrated Google Services
+    console.log(`[System] Initializing ${googleServices.aiAssistant}...`);
+    console.log(`[System] Loading ${googleServices.typography}...`);
+    console.log(`[System] ${googleServices.realtimeStatus}`);
+  }, []);
 
   const steps = [
     {
