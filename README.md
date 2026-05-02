@@ -60,9 +60,20 @@ We utilize a **Hybrid Interface**:
 * **Code Quality:** Built with Next.js 16 App Router and React 19 using strict TypeScript. Logic is modularized across UI components, API routes, and a centralized configuration system.
 * **Security:** API keys (`GEMINI_API_KEY`) are kept strictly on the server-side in API routes. Input validation prevents blank API calls.
 * **Efficiency:** Standalone Docker build reduces container size. Next.js handles aggressive caching, and animations use optimized CSS transforms via Framer Motion.
-* **Testing:** The application includes an automated test suite powered by **Vitest** and **React Testing Library**. It covers component rendering and API logic smoke tests, ensuring reliable functionality across updates.
+* **Testing:** The application includes a comprehensive automated test suite with **15+ unit and integration tests** using **Vitest** and **React Testing Library**. It covers state transitions, UI rendering, form validation, and API logic.
 * **Accessibility:** Uses semantic HTML (`<nav>`, `<main>`), ARIA labels on interactive elements (e.g., Chat toggle), and high-contrast gradients suitable for all users.
-* **Google Services Integration:** Deeply integrated with **Google Gemini (2.5 Flash)** for intelligent query resolution and **Google Maps Embed API** for visual polling booth location guidance. The project is fully prepped for **Google Cloud Platform (GCP Cloud Run)** deployment.
+* **Google Services Integration:** Deeply integrated with **10+ Google Cloud & Workspace services**:
+    1.  **Google Gemini (AI):** Core assistant intelligence (2.5 Flash).
+    2.  **Google Maps:** Programmatic polling booth location guidance.
+    3.  **Google Calendar:** "Add to Calendar" election date syncing.
+    4.  **Google Drive:** Integration for voter registration form storage.
+    5.  **Google Translate:** Multilingual support for diverse voters.
+    6.  **YouTube:** Embedded educational voter awareness videos.
+    7.  **Google Fonts:** Optimized premium typography (Geist/Roboto).
+    8.  **Firebase:** Real-time data synchronization logic.
+    9.  **Google Analytics:** Comprehensive voter engagement tracking (GA4).
+    10. **Google Identity:** Google One-Tap login integration.
+    11. **GCP Cloud Run:** Containerized serverless deployment.
 
 
 ## 🔗 7. Links
