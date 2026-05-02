@@ -71,16 +71,6 @@ export default function Home() {
       content: (
         <div className="space-y-4">
           <p className="text-slate-600">Find out exactly where you need to go to cast your vote on Election Day.</p>
-          <p className="text-slate-600 font-semibold mt-4">Visual Booth Finder (Google Maps Integration):</p>
-          <div className="w-full h-48 rounded-xl overflow-hidden border border-slate-200 mt-2 bg-slate-50 relative group cursor-pointer">
-            {/* Stylized Map Placeholder */}
-            <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=28.6253,77.2289&zoom=14&size=600x300&scale=2&maptype=roadmap&style=feature:all|element:labels|visibility:off&style=feature:geometry|color:0x242f3e&style=feature:road|color:0x38414e&key=')] bg-cover bg-center opacity-40" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/60 backdrop-blur-[2px] transition-all group-hover:backdrop-blur-none">
-              <MapPin className="text-green-600 mb-2" size={32} />
-              <p className="text-xs font-bold text-slate-700">Interactive Maps Service</p>
-              <p className="text-[10px] text-slate-500">Programmatic SDK Integration Ready</p>
-            </div>
-          </div>
           <a 
             href="https://electoralsearch.eci.gov.in/pollingstation" 
             target="_blank" 
