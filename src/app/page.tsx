@@ -1,24 +1,12 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ChatAssistant from '@/components/ChatAssistant';
 import { ArrowRight, FileText, MapPin, CheckCircle, Award, X, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { googleServices } from '@/services/google';
-import { runSystemAudit } from '@/services/internal-audit';
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Run Technical Semantic Audit for Evaluators
-    runSystemAudit();
-    
-    // Programmatic initialization of integrated Google Services
-    console.log(`[System] Initializing ${googleServices.aiAssistant}...`);
-    console.log(`[System] Loading ${googleServices.typography}...`);
-    console.log(`[System] ${googleServices.realtimeStatus}`);
-  }, []);
 
   const steps = [
     {
@@ -83,13 +71,20 @@ export default function Home() {
       content: (
         <div className="space-y-4">
           <p className="text-slate-600">Find out exactly where you need to go to cast your vote on Election Day.</p>
+          <p className="text-slate-600 font-semibold mt-4">Valid IDs you can bring (if you don't have Voter ID):</p>
+          <div className="grid grid-cols-2 gap-2 text-sm text-slate-600 mt-2">
+            <div className="bg-slate-100 p-2 rounded">✓ Aadhaar Card</div>
+            <div className="bg-slate-100 p-2 rounded">✓ PAN Card</div>
+            <div className="bg-slate-100 p-2 rounded">✓ Indian Passport</div>
+            <div className="bg-slate-100 p-2 rounded">✓ Driving License</div>
+          </div>
           <a 
             href="https://electoralsearch.eci.gov.in/pollingstation" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center mt-6 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors w-full justify-center"
+            className="inline-flex items-center mt-6 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors"
           >
-            Open Official Booth Finder <ExternalLink className="ml-2" size={18} />
+            Locate Polling Station <ExternalLink className="ml-2" size={18} />
           </a>
         </div>
       )
@@ -186,11 +181,11 @@ export default function Home() {
             
             <div className="space-y-12 relative">
               {[
-                { title: '2026 Announcement', desc: 'ECI announces the schedule for the State Assembly elections in Tamil Nadu, Kerala, WB, and Assam.' },
-                { title: 'State Nominations', desc: 'Candidates in the respective states file their papers, followed by rigorous scrutiny.' },
-                { title: 'Campaign Phase', desc: 'Candidates share their state-specific manifestos and engage with local voters.' },
-                { title: 'Polling Day', desc: 'Citizens head to assigned booths to cast their ballots for the 2026 assembly.' },
-                { title: 'Results 2026', desc: 'Votes are counted, and new state governments are officially declared and formed.' }
+                { title: 'Announcement', desc: 'ECI announces the schedule, and the Model Code of Conduct (MCC) comes into force immediately.' },
+                { title: 'Nominations', desc: 'Candidates file their papers, followed by scrutiny and a withdrawal period.' },
+                { title: 'Campaigning', desc: 'Political parties and candidates reach out to voters with their manifestos and rallies.' },
+                { title: 'Polling Day', desc: 'Voters head to assigned booths to cast their ballots via EVM or VVPAT.' },
+                { title: 'Counting & Results', desc: 'Votes are counted on a pre-decided date, and winners are officially declared.' }
               ].map((item, index) => (
                 <div key={index} className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                   {/* Content Container */}
